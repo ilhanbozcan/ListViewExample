@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         AdapterButtonListener Listener = new AdapterButtonListener();
 
         arrayAdapterButton.setOnClickListener(Listener); // set click
-
+        //arrayAdapterButton.setOnClickListener(Listener); // set click
+        /*
         View.OnClickListener Listener2 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,15 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
-        View.OnClickListener Listener3 = new View.OnClickListener() {
+        */
+        customAdapterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("AdapterButtonListener" , "Clicked" );
-                Intent intent = new Intent(MainActivity.this,CustomAdapterActivity.class); //set sm to ArrayAdapterActivity
-                startActivity(intent); // onclick open screen which in intent
-
+                Log.d("CustomButtonListener", "Clicked");
+                Intent intent = new Intent(MainActivity.this, CustomAdapterActivity.class);
+                startActivity(intent);
             }
-        };
+        });
+
 
 
     }
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Log.d("AdapterButtonListener" , "Clicked" );
-            Intent intent = new Intent(MainActivity.this,ArrayAdapterActivity.class); //set sm to ArrayAdapterActivity
+            Intent intent = new Intent(MainActivity.this, ArrayAdapterActivity.class); //set sm to ArrayAdapterActivity
             startActivity(intent); // onclick open screen which in intent
         }
     }
